@@ -1,3 +1,4 @@
+# open files for reading 
 # this file for testing some functions for me just 
 
 # f=open('object_B.obj','r')
@@ -13,37 +14,30 @@
 # meshes = pywavefront.Wavefront('object_A.obj')
 # meshes.draw()
 # ///////////////////////
-import numpy as np
 
-class ObjLoader:
-	
-	def __init__(self, arg):
-	
-		self.vert = []
-		self.face = []
-		self.model=[]
-	def load-model(self,file):
-			for line in open(file,'r'):
-				if line.startwith('#'):continue
-				values=line.split()
-			    if not values:continue
-
-			    if values[0] == 'v':
-			    	self.vert.append(values[1:4])
-			    if values[0] == 'f':
-			        self.face.append(values[1:4])	
+from mesh import obj 
+from OpenGL.GL import *
 
 
-                    self.model = np.array(self.model, dtype='float32')
+first = obj.Obj("object_A.obj") 
+second= obj.Obj("object_B.obj") 
+class OBJ:
+	"""docstring for OBJ"""
+	def __init__(self, first,swapyz):
+		
+		self.Ver = []
+		self.fa=[]
+		
+        material = None
 
-
-
-                    obj=ObjLoader()
-                    obj.load-model("object_A.obj")
-                    obj.load-model("object_B.obj")
-
-
-
-
-
-
+		for line in open('object_A','r'):
+			values=line.split()
+			if not values:continue
+			if values[0]=='v':
+			v=map(float,values[1:4])
+			if swapyz:
+				v=v[0],v[1],v[2]
+				self.Ver.append(v)
+            elif values[0]=='f':
+            f=map(float,values[1,4])
+                self.fa.append(f)

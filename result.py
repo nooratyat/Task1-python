@@ -16,9 +16,9 @@ class ObjLoader:
 
 	def load_model(self, file):
 	    for line in open(file,'r'):
-			if line.startwith('#'):continue
+			if line.startwith('#'): continue
 			values=line.split()
-		    if not values:continue
+		    if not values: continue
 
 			if values[0] == 'v':
 			   self.vert1.append(values[1:4])

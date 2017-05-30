@@ -1,4 +1,4 @@
-# open files for reading 
+
 # this file for testing some functions for me just 
 
 # f=open('object_B.obj','r')

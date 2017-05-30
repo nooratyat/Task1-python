@@ -1,4 +1,4 @@
-from OpenGL.GL import *
+# from OpenGL.GL import *
 import numpy as np
 
 class ObjLoader:
@@ -48,11 +48,14 @@ class ObjLoader:
 
 
                     obj=ObjLoader()
-                    obj.load-model("object_A.obj")
-                    obj.load-model("object_B.obj")
+                    obj.load_model("object_A.obj")+ obj.load_model("object_B.obj")
+                   
 
 
 
 
-
+# with open("object_A.obj", "wb") as outfile:
+#     for f in read_files:
+#         with open(f, "rb") as infile:
+#             outfile.write(infile.read())
 

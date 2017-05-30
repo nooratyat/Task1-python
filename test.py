@@ -40,6 +40,7 @@ class ObjLoader:
 
                     obj=ObjLoader()
                     obj.load-model("object_A.obj")
+                    obj.load-model("object_B.obj")
 
 
 
